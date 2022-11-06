@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+  keto:
+    image: oryd/keto:v0.10.0-alpha.0
+    ports:
+      - "4466:4466"
+      - "4467:4467"
+    command: serve -c /home/ory/keto.yml
+    restart: on-failure
+    environment:
+      - NAMESPACES_LOCATION=file:///home/ory/namespaces.keto.ts
+    volumes:
+      - type: bind
+        source: ./keto.yml
+        target: /home/ory/keto.yml
+      - type: bind
+        source: ./namespaces.keto.ts
+        target: /home/ory/namespaces.keto.ts
+
+  init:
+    image: oryd/keto:v0.10.0-alpha.0
+    command: relation-tuple create /home/ory/relation-tuples --insecure-disable-transport-security
+    restart: 'no'
+    volumes:
+      - type: bind
+        source: ./relation-tuples
+        target: /home/ory/relation-tuples
+    environment:
+      - KETO_WRITE_REMOTE=keto:4467
+    depends_on:
+      - keto

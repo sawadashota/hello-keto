@@ -1,0 +1,104 @@
+[
+  {
+    "namespace": "User",
+    "object": "shota",
+    "relation": "viewer",
+    "subject_set": {
+      "namespace": "Organization",
+      "object": "sslife",
+      "relation": "member"
+    }
+  },
+  {
+    "namespace": "User",
+    "object": "shota",
+    "relation": "manager",
+    "subject_set": {
+      "namespace": "Organization",
+      "object": "sslife",
+      "relation": "manager"
+    }
+  },
+  {
+    "namespace": "Organization",
+    "object": "sslife",
+    "relation": "member",
+    "subject_set": {
+      "namespace": "User",
+      "object": "shota"
+    }
+  },
+  {
+    "namespace": "Organization",
+    "object": "sslife",
+    "relation": "member",
+    "subject_set": {
+      "namespace": "User",
+      "object": "shelly"
+    }
+  },
+  {
+    "namespace": "Organization",
+    "object": "sslife",
+    "relation": "member",
+    "subject_set": {
+      "namespace": "User",
+      "object": "bob"
+    }
+  },
+  {
+    "namespace": "Organization",
+    "object": "sslife",
+    "relation": "manager",
+    "subject_set": {
+      "namespace": "User",
+      "object": "shota"
+    }
+  },
+  {
+    "namespace": "Organization",
+    "object": "sslife",
+    "relation": "member",
+    "subject_set": {
+      "namespace": "Group",
+      "object": "developer"
+    }
+  },
+  {
+    "namespace": "Group",
+    "object": "developer",
+    "relation": "manager",
+    "subject_set": {
+      "namespace": "Organization",
+      "object": "sslife",
+      "relation": "manager"
+    }
+  },
+  {
+    "namespace": "Group",
+    "object": "developer",
+    "relation": "manager",
+    "subject_set": {
+      "namespace": "User",
+      "object": "shelly"
+    }
+  },
+  {
+    "namespace": "Group",
+    "object": "developer",
+    "relation": "member",
+    "subject_set": {
+      "namespace": "User",
+      "object": "shota"
+    }
+  },
+  {
+    "namespace": "Group",
+    "object": "developer",
+    "relation": "member",
+    "subject_set": {
+      "namespace": "User",
+      "object": "shelly"
+    }
+  }
+]
